@@ -1,0 +1,31 @@
+
+Locators:- Name,id,tagname,classname,Link text(a tagname),Partial Link text,Xpath ,CSS
+
+
+
+
+
+
+DropDowns:-
+
+---> Static Dropdown which includes 'Select' as Tagname then we can say its a Static Dropdown
+Select dropdown=new Select(WebElement)
+1)Dropdown.SelectByIndex()
+2)Dropdown.SelectByVisibleText();
+3)Dropdown.SelectByValue();
+
+-->Updated Dropdown
+
+driver.findElement(By.cssSelector("div[id='divpaxinfo']")).click();
+		Thread.sleep(200);
+		for(int i=1;i<=5;i++)
+		{ driver.findElement(By.id("hrefIncAdt")).click();}
+		
+-->Dynamic DropDown
+	By using the indexes we can handle the dynamic indexes
+	driver.findElement(By.xpath("//a[@value='BLR']")).click();
+	driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+	---Parent Child Traverse -- xpath for Parent then white space then xpath of child
+	driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
+		
+
